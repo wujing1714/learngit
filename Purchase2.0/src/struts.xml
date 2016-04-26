@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+
+    	<package name="User" extends="json-default">
+		 
+		<action name="loginAction" class="edu.just.action.LoginAction"
+			method="loginUser">
+			<result name="success" type="json">
+				<param name="callbackParameter">callback</param>
+				<param name="excludeProperties">
+					userName,passWord,callback
+				</param>
+			</result>
+		</action>
+	</package>
+	
+	<package name="projectName" extends="json-default">
+		 
+		<action name="ProjectNameViewAction" class="edu.just.action.ProjectNameViewAction"
+			method="projectNameView">
+			<result name="success" type="json">
+				<param name="callbackParameter">callback</param>
+				<param name="excludeProperties">
+					userName,callback
+				</param>
+			</result>
+		</action>
+	</package>
+	
+	<package name="status" extends="json-default">
+		 
+		<action name="StatusViewAction" class="edu.just.action.StatusViewAction"
+			method="statusView">
+			<result name="success" type="json">
+				<param name="callbackParameter">callback</param>
+				<param name="excludeProperties">
+					projectName,callback
+				</param>
+			</result>
+		</action>
+	</package>
+	
+
+	
+		<package name="insertcargo" extends="json-default">	 
+		<action name="InsertCargoAction" class="edu.just.action.InsertCargoAction"
+			method="insertCargo">
+			<result name="success" type="json">
+				<param name="callbackParameter">callback</param>
+				<param name="excludeProperties">
+					userName,projectName,cargoName,unitPrice,number,callback
+				</param>
+			</result>
+		</action>
+	</package>
+	
+	
+	<package name="deletecargo" extends="json-default">	 
+		<action name="DeleteCargoAction" class="edu.just.action.DeleteCargoAction"
+			method="deleteCargo">
+			<result name="success" type="json">
+				<param name="callbackParameter">callback</param>
+				<param name="excludeProperties">
+					userName,projectName,cargoName,callback
+				</param>
+			</result>
+		</action>
+	</package>
+	
+	<package name="confirmcreate" extends="json-default">	 
+		<action name="ConfirmCreateAction" class="edu.just.action.ConfirmCreateAction"
+			method="confirmCreate">
+			<result name="success" type="json">
+				<param name="callbackParameter">callback</param>
+				<param name="excludeProperties">
+					userName,projectName,callback
+				</param>
+			</result>
+		</action>
+	</package>
+	
+	<package name="deleteproject" extends="json-default">	 
+		<action name="DeleteProjectAction" class="edu.just.action.DeleteProjectAction"
+			method="deleteProject">
+			<result name="success" type="json">
+				<param name="callbackParameter">callback</param>
+				<param name="excludeProperties">
+					projectName,callback
+				</param>
+			</result>
+		</action>
+	</package>
+	
+	<package name="verifyprojectname" extends="json-default">	 
+		<action name="VerifyProjectNameAction" class="edu.just.action.VerifyProjectNameAction"
+			method="verifyProjectName">
+			<result name="success" type="json">
+				<param name="callbackParameter">callback</param>
+				<param name="excludeProperties">
+					userName,projectName,callback
+				</param>
+			</result>
+		</action>
+	</package>
+	
+	<package name="allProjectName" extends="json-default">
+		 
+		<action name="AllProjectNameViewAction" class="edu.just.action.AllProjectNameViewAction"
+			method="allProjectNameView">
+			<result name="success" type="json">
+				<param name="callbackParameter">callback</param>
+				<param name="excludeProperties">
+					callback
+				</param>
+			</result>
+		</action>
+	</package>
+	
+	<package name="processresult" extends="json-default">
+		 
+		<action name="ProcessResultAction" class="edu.just.action.ProcessResultAction"
+			method="processResult">
+			<result name="success" type="json">
+				<param name="callbackParameter">callback</param>
+				<param name="excludeProperties">
+					userName,projectName,flag,callback
+				</param>
+			</result>
+		</action>
+	</package>
+	
+	<package name="submmit" extends="json-default">
+		 
+		<action name="SubmmitAction" class="edu.just.action.SubmmitAction"
+			method="submmit">
+			<result name="success" type="json">
+				<param name="callbackParameter">callback</param>
+				<param name="excludeProperties">
+					userName,projectName,message,callback
+				</param>
+			</result>
+		</action>
+	</package>
+</struts>
